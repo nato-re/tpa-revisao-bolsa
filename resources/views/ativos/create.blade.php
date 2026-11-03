@@ -32,9 +32,9 @@
                     @error('setor') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="preco" class="form-label text-secondary">Cotação (R$)</label>
-                    <input type="number" step="0.01" name="preco" id="preco" value="{{ old('preco') }}" class="form-control @error('preco') is-invalid @enderror">
-                    @error('preco') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    <label for="cotacao" class="form-label text-secondary">Cotação (R$)</label>
+                    <input type="number" step="0.01" name="cotacao" id="cotacao" value="{{ old('cotacao') }}" class="form-control @error('cotacao') is-invalid @enderror">
+                    @error('cotacao') <div class="invalid-feedback">{{ $message }}</div> @enderror
                 </div>
                 <div class="mb-3">
                     <label for="estoque" class="form-label text-secondary">Ações ofertadas</label>
