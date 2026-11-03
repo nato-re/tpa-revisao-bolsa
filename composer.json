@@ -40,7 +40,9 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate:fresh --seed --force"
+            "@php artisan migrate:fresh --seed --force",
+            "npm i",
+            "npm run build"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
