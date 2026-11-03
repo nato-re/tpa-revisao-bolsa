@@ -16,10 +16,15 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Ações
 Route::get('/ativos', [AtivoController::class, 'index'])->name('ativos.index');
-Route::get('/ativos/create', [AtivoController::class, 'create'])->name('ativos.create');
-Route::post('/ativos', [AtivoController::class, 'store'])->name('ativos.store');
+
+Route::middleware(['auth', 'vendedor'])->group(function () {
+    Route::get('/ativos/create', [AtivoController::class, 'create'])->name('ativos.create');
+    Route::post('/ativos', [AtivoController::class, 'store'])->name('ativos.store');
+});
 
 // Compras
-Route::get('/compras', [CompraController::class, 'index'])->name('compras.index');
-Route::get('/compras/create', [CompraController::class, 'create'])->name('compras.create');
-Route::post('/compras', [CompraController::class, 'store'])->name('compras.store');
+Route::middleware('auth')->group(function () {
+    Route::get('/compras', [CompraController::class, 'index'])->name('compras.index');
+    Route::get('/compras/create', [CompraController::class, 'create'])->name('compras.create');
+    Route::post('/compras', [CompraController::class, 'store'])->name('compras.store');
+});
