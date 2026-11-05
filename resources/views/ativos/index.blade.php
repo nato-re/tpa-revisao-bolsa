@@ -16,6 +16,7 @@
                 <th>Ações ofertadas</th>
                 <th>Corretor(a)</th>
             </tr>
+            {{ $var2 }}
         </thead>
         <tbody>
             @forelse ($ativos ?? [] as $ativo)
