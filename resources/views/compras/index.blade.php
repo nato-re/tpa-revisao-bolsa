@@ -25,14 +25,14 @@
                     <tr>
                         <td>{{ $ativo->ticker }}</td>
                         <td>{{ $ativo->pivot->quantidade }}</td>
-                        <td>R$ {{ number_format($ativo->pivot->preco_unitario, 2, ',', '.') }}</td>
-                        <td>R$ {{ number_format($ativo->pivot->quantidade * $ativo->pivot->preco_unitario, 2, ',', '.') }}</td>
+                        <td>R$ {{ number_format($ativo->pivot->preco, 2, ',', '.') }}</td>
+                        <td>R$ {{ number_format($ativo->pivot->quantidade * $ativo->pivot->preco, 2, ',', '.') }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
         <div class="card-footer text-end fw-bold">
-            Total: R$ {{ number_format($venda->ativos->sum(fn ($item) => $item->pivot->quantidade * $item->pivot->preco_unitario), 2, ',', '.') }}
+            Total: R$ {{ number_format($venda->ativos->sum(fn ($item) => $item->pivot->quantidade * $item->pivot->preco), 2, ',', '.') }}
         </div>
     </div>
 @empty
